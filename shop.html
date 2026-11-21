@@ -29,8 +29,8 @@
  </form>
  <p id="checkout-message" class="shop-message" role="status"></p>
 </section></main>
-<footer><span>MARYAM LUXE</span><span>Fabrics · Fashion · Worldwide</span><a class="owner-entry" href="admin-preview.html" aria-label="Owner preview"><span aria-hidden="true">♙</span></a></footer><script type="module" src="shop.js"></script>
+<footer><span>MARYAM LUXE</span><span>Fabrics · Fashion · Worldwide</span></footer><script type="module" src="shop.js"></script>
 <script>
-(()=>{const mark=document.getElementById("owner-gate");if(!mark)return;let taps=0,timer;const tap=()=>{taps++;clearTimeout(timer);if(taps>=5){taps=0;location.href="admin-preview.html";return;}timer=setTimeout(()=>{taps=0;},2200);};mark.addEventListener("click",tap);mark.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();tap();}});})();
+(()=>{const mark=document.getElementById("owner-gate");if(!mark)return;let taps=0,timer;const tap=e=>{e.preventDefault();e.stopPropagation();taps++;clearTimeout(timer);if(taps>=5){taps=0;location.href="admin-preview.html";return;}timer=setTimeout(()=>{taps=0;},4000);};mark.addEventListener("click",tap);mark.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){tap(e);}});})();
 </script>
 </body></html>
