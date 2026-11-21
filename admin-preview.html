@@ -16,7 +16,7 @@
 <main class="admin-main">
 <div class="admin-top"><div><p class="eyebrow">STORE MANAGEMENT</p><h1>Admin Panel Preview</h1><p class="muted">A guided look at the planned store management workspace.</p></div><span class="pill">VIEW-ONLY DEMO</span></div>
 <div class="preview-alert"><strong>Important:</strong> This is a visual preview only. All figures and records below are sample data. No real customer data, inventory, orders or database actions are connected here. The actual admin area remains protected behind owner login and permissions.</div>
-<section class="stats">
+<section class="stats" id="demo-stats">
 <div class="stat"><small>Total products · sample</small><strong>24</strong></div>
 <div class="stat"><small>New orders · sample</small><strong>08</strong></div>
 <div class="stat"><small>Low stock · sample</small><strong>03</strong></div>
@@ -30,8 +30,11 @@
 <section class="panel"><span class="panel-tag">05 · Finance</span><h2>Currency & Rates</h2><p>Review supported currencies and manage exchange-rate settings.</p><ul><li>Currency conversion display</li><li>Provider-based or manual exchange rates</li><li>Admin-only settings access</li></ul></section>
 <section class="panel"><span class="panel-tag">06 · Security</span><h2>Access & Store Settings</h2><p>Control the private parts of the storefront.</p><ul><li>Secure owner login</li><li>Permission checks on protected actions</li><li>Public catalogue excludes private fields</li><li>Checkout validates prices, stock and shipping on the server</li></ul></section>
 </div>
-<section class="panel" style="margin-top:18px"><span class="panel-tag">Sample order list · fictitious</span><h2>Recent Orders</h2><table class="demo-table"><thead><tr><th>Order</th><th>Region</th><th>Status</th><th>Total</th></tr></thead><tbody><tr><td>ML-DEMO-001</td><td>Pakistan</td><td><span class="pill">Parcel packed</span></td><td>Rs. 4,500</td></tr><tr><td>ML-DEMO-002</td><td>International</td><td><span class="pill">Pending</span></td><td>USD 42</td></tr><tr><td>ML-DEMO-003</td><td>Pakistan</td><td><span class="pill">Delivered</span></td><td>Rs. 2,800</td></tr></tbody></table><p>These example rows are illustrative only and are not saved as real orders.</p></section>
-<div class="admin-actions"><a class="admin-btn" href="shop.html?demo=1">View temporary collection</a><a class="admin-btn alt" href="index.html">Return to homepage</a></div>
+<section class="panel" id="demo-orders" style="margin-top:18px"><span class="panel-tag">Sample order list · fictitious</span><h2>Recent Orders</h2><table class="demo-table"><thead><tr><th>Order</th><th>Region</th><th>Status</th><th>Total</th></tr></thead><tbody><tr><td>ML-DEMO-001</td><td>Pakistan</td><td><span class="pill">Parcel packed</span></td><td>Rs. 4,500</td></tr><tr><td>ML-DEMO-002</td><td>International</td><td><span class="pill">Pending</span></td><td>USD 42</td></tr><tr><td>ML-DEMO-003</td><td>Pakistan</td><td><span class="pill">Delivered</span></td><td>Rs. 2,800</td></tr></tbody></table><p>These example rows are illustrative only and are not saved as real orders.</p></section>
+<div class="admin-actions"><button class="admin-btn" id="remove-demo">Remove all temporary demo data</button><button class="admin-btn alt" id="restore-demo">Restore demo data</button><a class="admin-btn" href="shop.html?demo=1">View temporary collection</a><a class="admin-btn alt" href="index.html">Return to homepage</a></div>
 </main>
 <footer><span>MARYAM LUXE</span><span>Admin panel preview · no live data</span></footer>
-</body></html>
+
+<script>
+(()=>{const key="maryam_demo_removed_v1";const remove=document.getElementById("remove-demo"),restore=document.getElementById("restore-demo");const stats=document.getElementById("demo-stats"),orders=document.getElementById("demo-orders");function apply(){const gone=localStorage.getItem(key)==="1";if(orders)orders.hidden=gone;if(stats){const nums=stats.querySelectorAll("strong");nums.forEach((n,i)=>{n.textContent=gone?"0":["24","08","03","04"][i];});}if(remove)remove.disabled=gone;if(restore)restore.disabled=!gone;}remove?.addEventListener("click",()=>{localStorage.setItem(key,"1");localStorage.removeItem("fabriva_demo_cart_v1");apply();alert("Temporary sample products, sample orders and demo figures are hidden. No real data was changed.");});restore?.addEventListener("click",()=>{localStorage.removeItem(key);apply();alert("Temporary demo data restored.");});apply();})();
+</script></body></html>
