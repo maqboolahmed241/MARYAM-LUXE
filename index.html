@@ -13,7 +13,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="MARYAM LUXE home">
-      <span class="brand-mark">M</span>
+      <span class="brand-mark" id="owner-gate" role="button" tabindex="0" aria-label="Brand mark">M</span>
       <span class="brand-word"><strong>MARYAM LUXE</strong><small>LUXURY COLLECTION</small></span>
     </a>
     <nav class="main-nav" aria-label="Main navigation">
@@ -78,5 +78,9 @@
   </main>
 
   <footer><span>MARYAM LUXE</span><span data-i18n="footer">Fabrics · Fashion · Worldwide</span><a class="owner-entry" href="admin-preview.html" aria-label="Owner preview"><span aria-hidden="true">♙</span></a></footer>
+
+<script>
+(()=>{const mark=document.getElementById("owner-gate");if(!mark)return;let taps=0,timer;const tap=()=>{taps++;clearTimeout(timer);if(taps>=5){taps=0;location.href="admin-preview.html";return;}timer=setTimeout(()=>{taps=0;},2200);};mark.addEventListener("click",tap);mark.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();tap();}});})();
+</script>
 </body>
 </html>
