@@ -22,7 +22,7 @@
    <label>Postal code<input name="postal_code" maxlength="30" autocomplete="postal-code"></label>
    <label class="wide">Full delivery address<textarea name="address" required maxlength="500" rows="3" autocomplete="street-address"></textarea></label>
    <label class="wide">Delivery notes (optional)<textarea name="delivery_notes" maxlength="500" rows="2"></textarea></label>
-   <label>Payment method<select name="payment_method" required><option value="cod">Cash on delivery (Pakistan only)</option><option value="bank_transfer">Bank transfer (manual confirmation)</option></select></label>
+   <label>Payment method<select name="payment_method" required><option value="cod">Cash on delivery (Pakistan only)</option><option value="bank_transfer">Bank transfer + receipt upload</option><option value="online_gateway">Online payment gateway (not connected)</option></select></label><label class="wide">Payment receipt / proof (optional)<input type="file" id="payment-proof" accept="image/*,.pdf"></label>
    <label class="trap" aria-hidden="true">Leave blank<input name="website" tabindex="-1" autocomplete="off"></label>
   </div>
   <button class="gold-button" type="submit" id="place-order">Place order</button>
