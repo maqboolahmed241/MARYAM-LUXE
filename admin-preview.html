@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#242321">
+<meta name="description" content="MARYAM LUXE admin panel preview">
+<title>Admin Panel Preview | MARYAM LUXE</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.admin-main{max-width:1180px;margin:auto;padding:38px 18px 80px}.admin-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.admin-top h1{font:clamp(34px,6vw,54px) Georgia,serif;font-weight:400;margin:12px 0}.preview-alert{padding:14px 16px;background:#f3efe6;border:1px solid #ded7ca;color:#665b48;font:13px/1.7 Arial,sans-serif;margin:20px 0 28px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.stat,.panel{background:#fffefa;border:1px solid #ded7ca;padding:18px}.stat small,.muted{font:11px Arial,sans-serif;color:#77736b}.stat strong{display:block;font:30px Georgia,serif;color:#8d744d;margin-top:8px}.admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.panel h2{font:23px Georgia,serif;font-weight:400;margin:0 0 10px}.panel p{font:12px/1.7 Arial,sans-serif;color:#77736b}.panel ul{padding-left:18px;font:12px/2 Arial,sans-serif;color:#514c43}.panel-tag{font:9px Arial,sans-serif;letter-spacing:.13em;color:#9a8054;text-transform:uppercase}.demo-table{width:100%;border-collapse:collapse;margin-top:12px;font:12px Arial,sans-serif}.demo-table td,.demo-table th{padding:10px 6px;border-bottom:1px solid #e8e1d6;text-align:left}.pill{display:inline-block;padding:5px 8px;background:#f3efe6;color:#806943;font:9px Arial,sans-serif;letter-spacing:.08em}.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.admin-btn{display:inline-block;padding:12px 16px;background:#292824;color:#f8f4eb;text-decoration:none;font:11px Arial,sans-serif;letter-spacing:.08em}.admin-btn.alt{background:transparent;color:#514b40;border:1px solid #b8a27e}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-grid{grid-template-columns:1fr}.admin-main{padding-top:26px}.stat strong{font-size:25px}}
+</style>
+</head>
+<body>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">M</span><span class="brand-word"><strong>MARYAM LUXE</strong><small>LUXURY COLLECTION</small></span></a><nav class="main-nav"><a href="index.html">Home</a><a href="shop.html?demo=1">Demo collection</a></nav><a class="shop-home" href="index.html">Back to store</a></header>
+<main class="admin-main">
+<div class="admin-top"><div><p class="eyebrow">STORE MANAGEMENT</p><h1>Admin Panel Preview</h1><p class="muted">A guided look at the planned store management workspace.</p></div><span class="pill">VIEW-ONLY DEMO</span></div>
+<div class="preview-alert"><strong>Important:</strong> This is a visual preview only. All figures and records below are sample data. No real customer data, inventory, orders or database actions are connected here. The actual admin area remains protected behind owner login and permissions.</div>
+<section class="stats">
+<div class="stat"><small>Total products · sample</small><strong>24</strong></div>
+<div class="stat"><small>New orders · sample</small><strong>08</strong></div>
+<div class="stat"><small>Low stock · sample</small><strong>03</strong></div>
+<div class="stat"><small>Team members · sample</small><strong>04</strong></div>
+</section>
+<div class="admin-grid">
+<section class="panel"><span class="panel-tag">01 · Catalogue</span><h2>Products & Stock</h2><p>Manage products, prices, product photos and stock quantities.</p><ul><li>Add / edit products</li><li>Categories: Ladies, Gents, Fabrics, Kids</li><li>Stock units, low-stock alerts and limited-stock labels</li><li>Enable or hide products from the public shop</li></ul></section>
+<section class="panel"><span class="panel-tag">02 · Sales</span><h2>Orders Management</h2><p>Review orders and move them through their delivery stages.</p><ul><li>Pakistan and international order filters</li><li>Parcel packed, dispatched, delivered and cancelled</li><li>Order details and status history</li><li>Customer details visible only to authorized admins</li></ul></section>
+<section class="panel"><span class="panel-tag">03 · Logistics</span><h2>Shipping & Delivery</h2><p>Set delivery regions and shipping charges before accepting orders.</p><ul><li>Country, province / region and city rates</li><li>Free-delivery thresholds</li><li>Enable or disable a delivery rate</li><li>Pakistan COD and manual bank transfer settings</li></ul></section>
+<section class="panel"><span class="panel-tag">04 · Team</span><h2>Admin Team & Permissions</h2><p>Give each team member only the access they need.</p><ul><li>Owner and additional admin roles</li><li>Product, orders, shipping and settings permissions</li><li>Customer information access controls</li><li>Owner account protection</li></ul></section>
+<section class="panel"><span class="panel-tag">05 · Finance</span><h2>Currency & Rates</h2><p>Review supported currencies and manage exchange-rate settings.</p><ul><li>Currency conversion display</li><li>Provider-based or manual exchange rates</li><li>Admin-only settings access</li></ul></section>
+<section class="panel"><span class="panel-tag">06 · Security</span><h2>Access & Store Settings</h2><p>Control the private parts of the storefront.</p><ul><li>Secure owner login</li><li>Permission checks on protected actions</li><li>Public catalogue excludes private fields</li><li>Checkout validates prices, stock and shipping on the server</li></ul></section>
+</div>
+<section class="panel" style="margin-top:18px"><span class="panel-tag">Sample order list · fictitious</span><h2>Recent Orders</h2><table class="demo-table"><thead><tr><th>Order</th><th>Region</th><th>Status</th><th>Total</th></tr></thead><tbody><tr><td>ML-DEMO-001</td><td>Pakistan</td><td><span class="pill">Parcel packed</span></td><td>Rs. 4,500</td></tr><tr><td>ML-DEMO-002</td><td>International</td><td><span class="pill">Pending</span></td><td>USD 42</td></tr><tr><td>ML-DEMO-003</td><td>Pakistan</td><td><span class="pill">Delivered</span></td><td>Rs. 2,800</td></tr></tbody></table><p>These example rows are illustrative only and are not saved as real orders.</p></section>
+<div class="admin-actions"><a class="admin-btn" href="shop.html?demo=1">View temporary collection</a><a class="admin-btn alt" href="index.html">Return to homepage</a></div>
+</main>
+<footer><span>MARYAM LUXE</span><span>Admin panel preview · no live data</span></footer>
+</body></html>
