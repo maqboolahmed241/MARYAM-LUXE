@@ -7,6 +7,19 @@ de:{navLadies:"Damen",navGents:"Herren",navFabrics:"Stoffe",navAbout:"Über uns"
 es:{navLadies:"Mujer",navGents:"Hombre",navFabrics:"Telas",navAbout:"Nuestra historia",eyebrow:"TELAS · MODA · MUNDO",heroTitle:'Elegancia tejida<br><em>para cada viaje.</em>',heroIntro:"Una cuidada colección de telas y ropa para mujeres y hombres.",explore:"Explorar colecciones",launchNote:"Estamos preparando nuestra colección en línea. Los pedidos aún no están abiertos.",collectionEyebrow:"LA SELECCIÓN MARYAM LUXE",collectionTitle:"Descubre nuestras colecciones",collectionIntro:"Explora las colecciones que estamos preparando en MARYAM LUXE.",ladiesTitle:"Colección para mujer",ladiesText:"Conjuntos de una, dos y tres piezas, ropa confeccionada y telas por pieza o rollo.",onePiece:"Conjuntos de una pieza",twoPiece:"Conjuntos de dos piezas",threePiece:"Conjuntos de tres piezas",gentsTitle:"Colección para hombre",gentsText:"Telas para trajes, trajes completos y prendas listas para vestir.",gentsSuits:"Conjuntos de una, dos piezas y completos",shirts:"Camisetas",denim:"Jeans y pantalones",fabricTitle:"Colecciones de telas",fabricText:"Telas con descripciones, unidades e información de existencias claras.",printed:"Estampados e impresión digital",plain:"Telas lisas",embroidered:"Telas bordadas",nextChapter:"EL SIGUIENTE CAPÍTULO",comingTitle:"Un mundo de telas. Un destino especial.",comingText:"Preparamos fotografías, precios claros y una experiencia de compra segura para clientes de Pakistán y de todo el mundo.",status:"Tienda en preparación · Pedidos aún no disponibles",footer:"Telas · Moda · Mundo"}
 };
 const select=document.querySelector("#language-select");
-function setLanguage(code){const words=translations[code]||translations.en;document.documentElement.lang=code;document.documentElement.dir=(code==="ur"||code==="ar")?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(words[key])el.innerHTML=words[key];});select.value=code;}
-select.addEventListener("change",()=>setLanguage(select.value));
-setLanguage("en");
+function setLanguage(code){
+  const safeCode=Object.prototype.hasOwnProperty.call(translations,code)?code:"en";
+  const words=translations[safeCode]||translations.en;
+  document.documentElement.lang=safeCode;
+  document.documentElement.dir=(safeCode==="ur"||safeCode==="ar")?"rtl":"ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key=el.dataset.i18n;
+    if(!Object.prototype.hasOwnProperty.call(words,key))return;
+    const value=words[key];
+    if(key==="heroTitle")el.innerHTML=value;
+    else el.textContent=value;
+  });
+  if(select && select.value!==safeCode)select.value=safeCode;
+}
+if(select)select.addEventListener("change",()=>setLanguage(select.value));
+setLanguage(select?.value||"en");
