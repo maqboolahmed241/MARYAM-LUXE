@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MARYAM LUXE — اشتہاری لنک</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#17120d,#49351e);font-family:Arial,sans-serif;color:#fff4dd}.card{width:min(100%,520px);padding:28px;border:1px solid #d7b46d;border-radius:22px;background:#21190f;box-shadow:0 18px 55px #0008;text-align:center}.brand{font: bold 34px Georgia,serif;color:#edcc83;letter-spacing:3px;direction:ltr}.sub{color:#f8e7c5;margin:12px 0 25px}.field{text-align:right;margin:18px 0}.field label{display:block;margin-bottom:8px;color:#f1d79e;font-weight:bold}.field input{width:100%;padding:14px;border-radius:10px;border:1px solid #c8a45f;font-size:15px;direction:ltr}.btn{display:block;width:100%;padding:15px;border:0;border-radius:30px;background:linear-gradient(90deg,#b98534,#ffe6a5,#c28d3e);color:#20170b;font-weight:bold;font-size:17px;text-decoration:none;cursor:pointer}.secondary{margin-top:12px;background:#352718;color:#f6dfaa;border:1px solid #b78e4d}.hint{font-size:13px;line-height:1.7;color:#ddcba8;margin-top:18px}.result{display:none;margin-top:16px;padding:12px;background:#fff4dd;color:#21170b;border-radius:10px;overflow-wrap:anywhere;direction:ltr}.result a{color:#593b10}
+</style></head>
+<body><main class="card">
+<div class="brand">MARYAM LUXE</div><div class="sub">Discover Your Style · Elegance in Every Thread</div>
+<div class="field"><label for="siteLink">ویب سائٹ کا لنک یہاں پیسٹ کریں</label><input id="siteLink" type="url" value="https://maqboolahmed241.github.io/fabriva-textiles/shop.html?collection=ladies&amp;lang=en" placeholder="https://example.com"></div>
+<button class="btn" id="make">شیئر لنک بنائیں</button>
+<a class="btn secondary" id="open" href="https://maqboolahmed241.github.io/fabriva-textiles/shop.html?collection=ladies&amp;lang=en" target="_blank" rel="noopener">OPEN NOW ↗</a>
+<div class="result" id="result"></div>
+<p class="hint">لنک پیسٹ کریں، پھر شیئر لنک بنائیں۔ یہ صفحہ کھولنے والے شخص کو OPEN NOW نظر آئے گا، جس سے آپ کی ویب سائٹ کھل جائے گی۔ تصویر الگ سے بھیجیں اور اس کے ساتھ بنا ہوا شیئر لنک بھی بھیجیں۔</p>
+</main>
+<script>
+(()=>{const input=document.getElementById('siteLink'),open=document.getElementById('open'),result=document.getElementById('result');const valid=s=>{try{const u=new URL(s);return u.protocol==='https:'||u.protocol==='http:'}catch{return false}};const p=new URLSearchParams(location.search).get('url');if(p&&valid(p)){input.value=p;open.href=p}document.getElementById('make').addEventListener('click',async()=>{const s=input.value.trim();if(!valid(s)){input.reportValidity();return}open.href=s;const share=new URL(location.href);share.search='';share.searchParams.set('url',s);result.style.display='block';result.innerHTML='<strong>یہ آپ کا شیئر لنک ہے:</strong><br><a id="copylink"></a>';const a=document.getElementById('copylink');a.href=share.href;a.textContent=share.href;try{await navigator.clipboard.writeText(share.href);result.insertAdjacentHTML('beforeend','<br><br>لنک کاپی ہو گیا ہے۔')}catch{result.insertAdjacentHTML('beforeend','<br><br>لنک کو دبا کر کاپی کریں۔')}})})();
+</script></body></html>
